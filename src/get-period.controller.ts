@@ -1,4 +1,3 @@
-import { AssertAuthUser } from '@st-achievements/core';
 import { cfg, Drizzle } from '@st-achievements/database';
 import { Controller, Exceptions, Handler, ZParams, ZRes } from '@st-api/core';
 import { and, eq, isNull } from 'drizzle-orm';
@@ -8,7 +7,6 @@ import { PERIOD_NOT_FOUND } from './exceptions.js';
 import { PeriodDto } from './period.dto.js';
 import { PeriodParams } from './period.params.js';
 
-@AssertAuthUser()
 @Exceptions([PERIOD_NOT_FOUND])
 @ZRes(PeriodDto)
 @Controller({

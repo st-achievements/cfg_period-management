@@ -3,10 +3,8 @@ import { PeriodPagedDto } from './period-paged.dto.js';
 import { PeriodsQueryParams } from './periods.params.js';
 import { and, count, desc, gte, lte, SQL } from 'drizzle-orm';
 import { cfg, Drizzle } from '@st-achievements/database';
-import { AssertAuthUser } from '@st-achievements/core';
 import { Logger } from '@st-api/firebase';
 
-@AssertAuthUser()
 @ZRes(PeriodPagedDto)
 @Controller({
   path: 'v1/periods',

@@ -1,7 +1,7 @@
 import { Controller, Handler, ZQuery, ZRes } from '@st-api/core';
 import { PeriodPagedDto } from './period-paged.dto.js';
 import { PeriodsQueryParams } from './periods.params.js';
-import { and, count, desc, gte, lte, SQL } from 'drizzle-orm';
+import { and, asc, count, gte, lte, SQL } from 'drizzle-orm';
 import { cfg, Drizzle } from '@st-achievements/database';
 import { Logger } from '@st-api/firebase';
 
@@ -40,7 +40,7 @@ export class GetPeriodsController implements Handler {
             cursor,
           ),
         ),
-        orderBy: desc(cfg.period.id),
+        orderBy: asc(cfg.period.endAt),
       }),
       this.drizzle
         .select({ count: count() })

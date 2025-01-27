@@ -24,7 +24,7 @@ export const PeriodsCursorParam = z
 
 export const PeriodsQueryParams = z.object({
   cursor: PeriodsCursorParam.optional(),
-  limit: ParamIntSchema.pipe(z.number().min(1).max(100)).default('10'),
+  limit: ParamIntSchema.pipe(z.number().min(1).max(1000)).default('100'),
   startAt: z.string().date().optional(),
   endAt: z.string().date().optional(),
 });
